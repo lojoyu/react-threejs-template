@@ -18,9 +18,10 @@ const Three = () => {
         resizeCanvas(size);
     });
     useEffect(() => {
+        let canvasCurrent = canvasRef.current;
         let renderer = canvas();        
-        canvasRef.current.appendChild(renderer.domElement);
-        return () => canvasRef.current.removeChild( renderer.domElement);
+        canvasCurrent.appendChild(renderer.domElement);
+        return () => canvasCurrent.removeChild( renderer.domElement);
     }, []);
 
     return (
